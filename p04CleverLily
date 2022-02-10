@@ -1,0 +1,38 @@
+package ForLoop.exe;
+
+import java.util.Scanner;
+
+public class p04CleverLily {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            int age = Integer.parseInt(scanner.nextLine());
+            double priceWashingMachine = Double.parseDouble(scanner.nextLine());
+            int priceToy = Integer.parseInt(scanner.nextLine());
+
+            int countToys = 0;
+            double currentMoney = 0;
+            double sumMoney = 0;
+            int brotherCount = 0;
+
+            for(int i = 1; i <= age; i ++){
+                if(i %2 != 0){
+                    countToys++;
+                }else {
+                    brotherCount++;
+                    currentMoney=currentMoney+10;
+                    sumMoney = sumMoney+currentMoney;
+                }
+            }
+            double totalMoney = (countToys * priceToy) + (sumMoney - brotherCount);
+            double diff = Math.abs(totalMoney-priceWashingMachine);
+            if (totalMoney>=priceWashingMachine){
+                System.out.printf("Yes! %.2f", diff);
+            }else {
+                System.out.printf("No! %.2f", diff);
+            }
+        }
+}
+
+
+
