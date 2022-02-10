@@ -1,0 +1,31 @@
+package ForLoop.lab;
+
+import java.util.Scanner;
+
+public class p09LeftAndRightSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num = Integer.parseInt(scanner.nextLine());
+
+        int left = 0;
+        int right = 0;
+
+        for (int i = 0; i<2*num; i++) {
+            int currentNum = Integer.parseInt(scanner.nextLine());
+            if (i < num) {
+                left = left + currentNum;
+            } else {
+                right = right + currentNum;
+            }
+        }
+
+            if (left == right){
+                System.out.printf("Yes, sum = %d%n", left);
+            }else {
+                int diff = Math.abs(left-right);
+                System.out.printf("No, diff = %d%n", diff);
+            }
+        }
+
+    }
