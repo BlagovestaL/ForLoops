@@ -1,0 +1,30 @@
+package ForLoop.exe;
+
+import java.util.Scanner;
+
+public class p02HalfSumElement {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num = Integer.parseInt(scanner.nextLine());
+
+        int maxNum = Integer.MIN_VALUE;
+        int numPlus = 0;
+
+        for(int i=0; i<num; i++){
+            int n =Integer.parseInt(scanner.nextLine());
+            numPlus = numPlus + n;
+            if(n>maxNum){
+                maxNum = n;
+            }
+        }
+        numPlus = numPlus - maxNum;
+        if(numPlus == maxNum){
+            System.out.println("Yes");
+            System.out.printf("Sum = %d", maxNum);
+        }else {
+            System.out.println("No");
+            System.out.printf("Diff = %d", Math.abs(maxNum-numPlus));
+        }
+    }
+}
