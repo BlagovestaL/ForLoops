@@ -1,0 +1,32 @@
+package ForLoop.exe;
+
+import java.util.Scanner;
+
+public class p05Salary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+         int sites = Integer.parseInt(scanner.nextLine());
+         int salaries = Integer.parseInt(scanner.nextLine());
+
+         for(int i = 0; i < sites; i++){
+             String websites = scanner.nextLine();
+
+             if(websites.equals("Facebook")){
+                    salaries=salaries - 150;
+             }else if(websites.equals("Instagram")){
+                    salaries = salaries - 100;
+             }else if(websites.equals("Reddit")){
+                    salaries = salaries - 50;
+             }
+             if (salaries <= 0){
+                 break;
+             }
+         }
+            if (salaries <= 0){
+                System.out.println("You have lost your salary.");
+             }else{
+                System.out.println(salaries);
+
+         }
+    }
+}
